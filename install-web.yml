@@ -1,0 +1,13 @@
+---
+- name: Install default Apache Web Server
+  hosts: apache
+  become: true
+
+  tasks:
+  - name: Istall Apache WebServer
+    apt:
+      name: apache2
+      state: latest
+
+  - name: Start Apache and Enable it on the every boot
+    service: name=apache2 state=started enabled=yes

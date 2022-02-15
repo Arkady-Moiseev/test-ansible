@@ -1,0 +1,27 @@
+---
+- name: Install Apache Web Server and Upload my Web Page
+  hosts: apache
+  become: true
+
+  vars:
+    source_file: ./MyWebSite/index.html
+    destin_file: /var/www/html
+
+  tasks:
+  - name: Istall Apache WebServer
+    apt:
+      name: apache2
+      state: latest
+
+  - name: Copy MyWebSite
+    copy: src={{ source_file }} dest={{ destin_file }} mode=0555
+    notify: Restart Apache
+
+  - name: Start Apache and Enable it on the every boot
+    service: name=apache2 state=started enabled=yes
+
+
+
+  handlers:
+  - name: Restart Apache
+    service: name=apache2 state=restarted
