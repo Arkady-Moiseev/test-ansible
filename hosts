@@ -1,0 +1,9 @@
+[my_servers]
+ub_ser_jenkins ansible_host=192.168.4.132
+ub_ser_apache ansible_host=192.168.4.133
+
+[my_servers:vars]
+ansible_user=user
+
+[work_servers]
+share ansible_host=192.168.7.6 ansible_user=moiseev_as ansible_user_password=4815162342qwe!
