@@ -1,0 +1,10 @@
+[servers]
+ub_ser_jenkins ansible_host=192.168.4.132
+ub_ser_apache ansible_host=192.168.4.133
+
+
+
+
+
+[servers:vars]
+ansible_user=user
