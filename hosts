@@ -1,9 +1,20 @@
 [my_servers]
 ub_ser_jenkins ansible_host=192.168.4.132
 ub_ser_apache ansible_host=192.168.4.133
+zabbix ansible_host=192.168.4.134
 
 [my_servers:vars]
 ansible_user=user
+ansible_password=1234
 
 [work_servers]
-share ansible_host=192.168.7.6 ansible_user=moiseev_as ansible_user_password=4815162342qwe!
+share ansible_host=192.168.7.6
+firewall ansible_host=192.168.7.8
+eset ansible_host=192.168.7.18
+i5_backup ansible_host=192.168.7.150
+sqlserver ansible_host=192.168.7.3
+frea ansible_host=192.168.7.244
+
+[work_servers:vars]
+ansible_user=root
+ansible_password=Kombinat2048!
